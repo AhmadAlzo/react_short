@@ -1,10 +1,11 @@
+/////////1
 const [items, setItems] = useState(['item 1', 'item 2', 'item 3']);
 
 const updateArray = () => {
   const newItem = 'new item';
   setItems(prevItems => [...prevItems, newItem]);
 };
-
+//////2
 const [person, setPerson] = useState({
   name: 'John',
   age: 30,
@@ -17,6 +18,7 @@ const updateAge = () => {
     age: prevPerson.age + 1
   }));
 };
+//////////3
 
 const [people, setPeople] = useState([
   { id: 1, name: 'Alice', age: 25 },
@@ -31,6 +33,8 @@ const updateAge = (personId) => {
     )
   );
 };
+
+//////////////4
 
 const [data, setData] = useState({
   id: 1,
@@ -50,6 +54,8 @@ const updateItemName = (itemId, newItemName) => {
     )
   }));
 };
+
+///////////////5
 
 const [data, setData] = useState({
   id: 1,
@@ -71,6 +77,7 @@ const updateNestedValue = (key, newValue) => {
   }));
 };
 
+/////////////6
 
 const [data, setData] = useState({
   id: 1,
@@ -93,6 +100,8 @@ const updateNestedValue = (objectKey, keyToUpdate, newValue) => {
     }
   }));
 };
+
+//////////////7
 
 const [data, setData] = useState([
   {
@@ -121,6 +130,8 @@ const updateItem = (objectId, itemIndex, newItem) => {
     )
   );
 };
+
+////////////8
 
 const [data, setData] = useState({
   id: 1,
