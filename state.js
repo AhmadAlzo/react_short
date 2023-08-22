@@ -122,6 +122,33 @@ const updateItem = (objectId, itemIndex, newItem) => {
   );
 };
 
+const [data, setData] = useState({
+  id: 1,
+  name: 'Example',
+  nestedObject: {
+    subObject1: {
+      key1: 'Value 1',
+      key2: 'Value 2'
+    },
+    subObject2: {
+      key1: 'Value 3',
+      key2: 'Value 4'
+    }
+  }
+});
+
+const updateSubObjectValue = (subObjectName, keyToUpdate, newValue) => {
+  setData(prevData => ({
+    ...prevData,
+    nestedObject: {
+      ...prevData.nestedObject,
+      [subObjectName]: {
+        ...prevData.nestedObject[subObjectName],
+        [keyToUpdate]: newValue
+      }
+    }
+  }));
+};
 
 
 
