@@ -5,6 +5,18 @@ const updateArray = () => {
   const newItem = 'new item';
   setItems(prevItems => [...prevItems, newItem]);
 };
+
+
+const [myArray, setMyArray] = useState([1, 2, 3]);
+
+function updateArrayElement(index, newValue) {
+  setMyArray(prevArray => {
+    const newArray = [...prevArray];
+    newArray[index] = newValue;
+    return newArray;
+  });
+}
+
 //////2
 const [person, setPerson] = useState({
   name: 'John',
