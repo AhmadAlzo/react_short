@@ -6,7 +6,7 @@ const updateArray = () => {
   setItems(prevItems => [...prevItems, newItem]);
 };
 
-
+///////////////////////////////
 const [myArray, setMyArray] = useState([1, 2, 3]);
 
 function updateArrayElement(index, newValue) {
@@ -16,6 +16,25 @@ function updateArrayElement(index, newValue) {
     return newArray;
   });
 }
+
+/////////////////////////////
+const [grid, setGrid] = useState([
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+]);
+
+const changeValue = (rowIndex, colIndex, newValue) => {
+  setGrid(prevGrid => {
+    return prevGrid.map((row, rIndex) =>
+      rIndex === rowIndex ? row.map((cell, cIndex) =>
+        cIndex === colIndex ? newValue : cell
+      ) : row
+    );
+  });
+};
+
+///////////////
 
 //////2
 const [person, setPerson] = useState({
