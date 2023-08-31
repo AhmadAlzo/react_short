@@ -1,0 +1,35 @@
+////////////////////////@axios@//////////////////////
+try {
+  const response = await axios.get(`${BASE_API_URL}category=${category}&lang=en&country=us&max=10&apikey=${API_KEY}`);
+  const jsonData = response.data;
+  setData(jsonData.articles);
+} catch (error) {
+  console.error('Error fetching data:', error);
+}
+
+/////////////////////////////////////////////////
+try {
+  const requestData = {
+    category: category,
+    lang: 'en',
+    country: 'us',
+    max: 10,
+    apikey: API_KEY,
+  };
+
+  const response = await axios.post(BASE_API_URL, requestData, {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer yourAccessToken',
+      'User-Agent': 'YourApp/1.0',
+      'Accept': 'application/json',
+      'Cache-Control': 'no-cache',
+      // ... other custom headers
+    },
+  });
+
+  const jsonData = response.data;
+  setData(jsonData.articles);
+} catch (error) {
+  console.error('Error fetching data:', error);
+}
